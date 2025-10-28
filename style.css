@@ -1,0 +1,68 @@
+/* ===== Widget animation ===== */
+#exchange-widget {
+  transition: transform 0.25s ease-in-out;
+}
+#exchange-widget:hover {
+  transform: scale(1.03);
+}
+
+/* ===== Bounce & Fade animations ===== */
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+.animate-bounce-slow {
+  animation: bounce-slow 3s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+/* ===== Responsive adjustments ===== */
+@media (max-width: 768px) {
+  #menu.show {
+    z-index: 20;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+  }
+  header .toggle-container {
+    z-index: 0;
+  }
+  #hero {
+    padding-top: 9rem !important;
+  }
+}
+
+/* ===== Pokemon card effects ===== */
+#pokemon-container div {
+  backdrop-filter: blur(20px) saturate(180%);
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 1rem;
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+#pokemon-container div:hover {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.25);
+}
+.group-hover\:scale-115 {
+  transform: scale(1.15);
+}
+
+/* ===== Glass scroll transition ===== */
+html {
+  scroll-behavior: smooth;
+}
+.scroll-section {
+  transition: background 0.6s ease, backdrop-filter 0.6s ease;
+}
+.scroll-section.active {
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.1);
+}
